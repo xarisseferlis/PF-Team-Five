@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">PF Movie App</string>
+    <string name="login_page_title">Join Vrasidas quality movies</string>
+    <string name="login_forgot">Forgot your password?</string>
+    <string name="login_btn">Login</string>
+    <string name="login_edit_username">Email Address</string>
+    <string name="login_edit_password">Password</string>
+</resources>
