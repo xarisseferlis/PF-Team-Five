@@ -4,106 +4,51 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:paddingLeft="@dimen/default_padding"
-    android:paddingRight="@dimen/default_padding">
+    tools:context=".MovieListActivity">
 
-    <ImageView
-        android:id="@+id/login_linear_back_btn"
-        android:layout_width="@dimen/minimum_size"
-        android:layout_height="@dimen/minimum_size"
-        android:layout_gravity="left"
-        android:padding="12dp"
-        android:src="@drawable/ic_round_arrow_back_24"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:tint="#b8c0ce" />
-
+    <!-- let's add the toolbar -->
     <TextView
-        android:id="@+id/login_linear_title"
-        android:layout_width="wrap_content"
+        android:id="@+id/header"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="45dp"
-        android:text="@string/login_page_title"
-        android:textColor="#363c43"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@id/login_linear_username"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed" />
+        android:layout_marginTop="32dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:fontFamily="serif"
+        android:text="Choose a Movie for Today"
+        android:textSize="48sp"
+        />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/login_linear_username"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_margin="14dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:hint="@string/login_edit_username"
-        app:boxBackgroundColor="#edf1f5"
-        app:boxCornerRadiusBottomEnd="4dp"
-        app:boxCornerRadiusBottomStart="4dp"
-        app:boxCornerRadiusTopEnd="4dp"
-        app:boxCornerRadiusTopStart="4dp"
-        app:layout_constraintBottom_toTopOf="@id/login_linear_password"
-        app:layout_constraintTop_toBottomOf="@id/login_linear_title">
+        android:layout_height="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.Light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header"
+        app:layout_scrollFlags="scroll|enterAlways"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/login_linear_username_value"
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/search_view"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textEmailAddress" />
+            android:layout_height="?attr/actionBarSize"
+            app:queryHint="Looking for a movie?" />
 
-    </com.google.android.material.textfield.TextInputLayout>
+    </androidx.appcompat.widget.Toolbar>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/login_linear_password"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:hint="@string/login_edit_password"
-        app:boxBackgroundColor="#edf1f5"
-        app:boxCornerRadiusBottomEnd="4dp"
-        app:boxCornerRadiusBottomStart="4dp"
-        app:boxCornerRadiusTopEnd="4dp"
-        app:boxCornerRadiusTopStart="4dp"
-        app:layout_constraintBottom_toTopOf="@id/login_linear_login"
-        app:layout_constraintTop_toBottomOf="@id/login_linear_username"
-        app:passwordToggleEnabled="true"
-        app:passwordToggleTint="#c3ced8">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/login_linear_password_value"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/login_linear_login"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/login_btn"
-        android:textAllCaps="false"
-        app:backgroundTint="@color/red"
-        app:cornerRadius="4dp"
-        app:layout_constraintBottom_toTopOf="@id/login_linear_forgot"
-        app:layout_constraintTop_toBottomOf="@id/login_linear_password" />
-
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/login_linear_forgot"
-        style="@style/Widget.MaterialComponents.Button.TextButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/login_forgot"
-        android:textAllCaps="false"
-        android:textColor="@color/red"
+        android:layout_marginTop="14dp"
+        android:layout_height="0dp"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_linear_login" />
-
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
