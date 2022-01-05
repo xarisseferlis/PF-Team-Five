@@ -136,7 +136,6 @@ public class MovieListActivity extends AppCompatActivity implements OnMovieListe
 
     @Override
     public void onMovieClick(int position) {
-        // Toast.makeText(this, "The Position "  +position, Toast.LENGTH_SHORT).show();
 
         // We don't need position of the movie in recyclerview
         // WE NEED THE ID OF THE MOVIE IN ORDER TO GET ALL IT"S DETAILS
@@ -154,8 +153,6 @@ public class MovieListActivity extends AppCompatActivity implements OnMovieListe
     public void onCategoryClick(String category) {
 
     }
-
-    // Get data from searchview & query the api to get the results (Movies)
     private void SetupSearchView() {
         final SearchView searchView = findViewById(R.id.search_view);
 

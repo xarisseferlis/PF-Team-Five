@@ -35,12 +35,12 @@ public class MovieListViewModel extends ViewModel {
 
     // 3- Calling method in view-model
     public void searchMovieApi(String query, int pageNumber){
-        movieRepository.serachMovieApi(query, pageNumber);
+        movieRepository.searchMovieApi(query, pageNumber);
     }
 
     // 3- Calling method in view-model
     public void searchMoviePop(int pageNumber){
-        movieRepository.serachMoviePop( pageNumber);
+        movieRepository.searchMoviePop( pageNumber);
     }
 
 

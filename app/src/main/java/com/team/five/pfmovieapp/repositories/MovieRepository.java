@@ -39,7 +39,7 @@ public class MovieRepository {
     }
 
     // 2- Calling the method in repository
-    public void serachMovieApi(String query, int pageNumber){
+    public void searchMovieApi(String query, int pageNumber){
         mQuery = query;
         mPageNumber = pageNumber;
         movieApiClient.searchMoviesApi(query, pageNumber);
@@ -47,7 +47,7 @@ public class MovieRepository {
 
 
     public void searchNextPage(){
-        serachMovieApi(mQuery, mPageNumber+1);
+        searchMovieApi(mQuery, mPageNumber+1);
     }
 
 
@@ -59,7 +59,7 @@ public class MovieRepository {
     }
 
     // 2- Calling the method in repository
-    public void serachMoviePop(int pageNumber){
+    public void searchMoviePop(int pageNumber){
 
         mPageNumber = pageNumber;
         movieApiClient.searchMoviesPop( pageNumber);

@@ -3,7 +3,7 @@ package com.team.five.pfmovieapp.adapters;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RatingBar;
-import android.widget.TextView;
+//import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,7 +15,7 @@ public class MovieViewHolder extends RecyclerView.ViewHolder implements View.OnC
 
 
     // Widgets
-    TextView title, release_date, duration;
+    //TextView title, release_date, duration;
     ImageView imageView;
     RatingBar ratingBar;
 
