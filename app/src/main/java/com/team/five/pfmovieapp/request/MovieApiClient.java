@@ -39,12 +39,17 @@ public class MovieApiClient {
             instance = new MovieApiClient();
         }
         return  instance;
-
     }
+
+
 
     private MovieApiClient(){
         mMovies = new MutableLiveData<>();
         mMoviesPop = new MutableLiveData<>();
+    }
+
+    public void clearLiveData(){
+        mMovies = new MutableLiveData<>();
     }
 
 

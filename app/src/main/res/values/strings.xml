@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">PF Movie App</string>
+    <string name="popular_title">Choose a Movie for Today</string>
 </resources>

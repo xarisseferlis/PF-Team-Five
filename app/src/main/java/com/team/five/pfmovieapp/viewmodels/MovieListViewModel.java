@@ -32,7 +32,6 @@ public class MovieListViewModel extends ViewModel {
     }
 
 
-
     // 3- Calling method in view-model
     public void searchMovieApi(String query, int pageNumber){
         movieRepository.searchMovieApi(query, pageNumber);
@@ -49,5 +48,7 @@ public class MovieListViewModel extends ViewModel {
         movieRepository.searchNextPage();
     }
 
-
+    public void onStop() {
+        movieRepository.clearCache();
+    }
 }

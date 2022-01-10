@@ -33,7 +33,6 @@ public class MovieViewHolder extends RecyclerView.ViewHolder implements View.OnC
 
 
         imageView = itemView.findViewById(R.id.movie_img);
-        ratingBar = itemView.findViewById(R.id.rating_bar);
 
         itemView.setOnClickListener(this);
 

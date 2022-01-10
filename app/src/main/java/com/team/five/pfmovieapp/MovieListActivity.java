@@ -11,7 +11,6 @@ import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.team.five.pfmovieapp.adapters.MovieRecyclerView;
@@ -56,6 +55,12 @@ public class MovieListActivity extends AppCompatActivity implements OnMovieListe
 
         Log.v("Tagy", "ispop: " +isPopular);
 
+    }
+
+    @Override
+    protected void onStop() {
+        movieListViewModel.onStop();
+        super.onStop();
     }
 
     private void ObservePopular(){
@@ -109,7 +114,7 @@ public class MovieListActivity extends AppCompatActivity implements OnMovieListe
 
         movieRecyclerAdapter = new MovieRecyclerView( this);
         recyclerView.setAdapter(movieRecyclerAdapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false));
+        //recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false));
 
 
 

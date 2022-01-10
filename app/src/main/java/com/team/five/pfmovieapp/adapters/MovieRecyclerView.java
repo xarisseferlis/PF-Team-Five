@@ -60,7 +60,7 @@ public class MovieRecyclerView extends RecyclerView.Adapter<RecyclerView.ViewHol
         if (itemViewType == DISPLAY_SEARCH){
 
             // vote average is over 10, and our rating bar is over 5 stars: dividing by 2
-            ((MovieViewHolder)holder).ratingBar.setRating((mMovies.get(i).getVote_average())/2);
+            //((MovieViewHolder)holder).ratingBar.setRating((mMovies.get(i).getVote_average())/2);
 
             // ImageView: Using Glide Library
             Glide.with(holder.itemView.getContext())
@@ -69,7 +69,7 @@ public class MovieRecyclerView extends RecyclerView.Adapter<RecyclerView.ViewHol
                     .into(((MovieViewHolder)holder).imageView);
 
         }else{
-            ((Popular_view_holder)holder).ratingBar_pop.setRating(mMovies.get(i).getVote_average());
+         //   ((Popular_view_holder)holder).ratingBar_pop.setRating(mMovies.get(i).getVote_average());
 
             // ImageView: Using Glide Library
             Glide.with(holder.itemView.getContext())
