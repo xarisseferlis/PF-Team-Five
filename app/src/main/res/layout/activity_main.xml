@@ -17,8 +17,8 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:fontFamily="serif"
-        android:text="Choose a Movie for Today"
-        android:textSize="48sp"
+        android:text= "@string/popular_title"
+        android:textSize="30sp"
         />
 
     <androidx.appcompat.widget.Toolbar
@@ -46,7 +46,10 @@
         android:layout_width="match_parent"
         android:layout_marginTop="14dp"
         android:layout_height="0dp"
+        android:orientation="vertical"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
