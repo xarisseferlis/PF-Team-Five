@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -49,12 +51,17 @@ public class MovieListActivity extends AppCompatActivity implements OnMovieListe
         movieListViewModel = new ViewModelProvider(this).get(MovieListViewModel.class);
 
         ConfigureRecyclerView();
-        ObserveAnyChange();
         ObservePopular();
         movieListViewModel.searchMoviePop(1);
 
         Log.v("Tagy", "ispop: " +isPopular);
 
+    }
+
+    @Override
+    protected void onPostResume() {
+        super.onPostResume();
+        ObserveAnyChange();
     }
 
     @Override
@@ -160,6 +167,16 @@ public class MovieListActivity extends AppCompatActivity implements OnMovieListe
     }
     private void SetupSearchView() {
         final SearchView searchView = findViewById(R.id.search_view);
+        EditText searchEditText = searchView.findViewById(androidx.appcompat.R.id.search_src_text);
+
+        ImageView searchIcon=(ImageView)searchView.findViewById(androidx.appcompat.R.id.search_button);
+        ImageView searchCloseIcon = (ImageView)searchView.findViewById(androidx.appcompat.R.id.search_close_btn);
+
+        searchIcon.setColorFilter(getResources().getColor(R.color.white),android.graphics.PorterDuff.Mode.SRC_IN);
+        searchCloseIcon.setColorFilter(getResources().getColor(R.color.white_almost),android.graphics.PorterDuff.Mode.SRC_IN);
+
+        searchEditText.setTextColor(getResources().getColor(R.color.white));
+        searchEditText.setHintTextColor(getResources().getColor(R.color.white_almost));
 
 
         // Detect Search
@@ -180,8 +197,7 @@ public class MovieListActivity extends AppCompatActivity implements OnMovieListe
             }
         });
 
-
-
+        searchView.setQueryHint("Looking for a movie?");
 
         // Make search query
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -200,12 +216,6 @@ public class MovieListActivity extends AppCompatActivity implements OnMovieListe
                 return false;
             }
         });
-
-
-
-
-
-
 
 
 

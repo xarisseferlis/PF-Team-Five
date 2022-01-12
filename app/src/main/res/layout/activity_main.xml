@@ -4,7 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     tools:context=".MovieListActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+        android:background="@drawable/red_chairs"
+        />
 
     <!-- let's add the toolbar -->
     <TextView
@@ -13,12 +22,14 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:textColor="@color/white"
         android:layout_marginTop="32dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:fontFamily="serif"
         android:text= "@string/popular_title"
-        android:textSize="30sp"
+        android:textSize="40sp"
+
         />
 
     <androidx.appcompat.widget.Toolbar
@@ -36,8 +47,7 @@
         <androidx.appcompat.widget.SearchView
             android:id="@+id/search_view"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            app:queryHint="Looking for a movie?" />
+            android:layout_height="?attr/actionBarSize" />
 
     </androidx.appcompat.widget.Toolbar>
 
